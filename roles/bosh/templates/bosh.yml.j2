@@ -152,7 +152,9 @@ jobs:
       human_readable_vm_names: true
 {% endif %}
       default_key_name: {{ bosh_default_key_name }}
-      default_security_groups: [{{ bosh_default_security_groups | join(', ') }}]
+      #default_security_groups: [{{ bosh_default_security_groups | join(', ') }}]
+      default_security_groups: bosh_security_group
+
 
     agent: {mbus: "nats://nats:{{ bosh_nats_password }}@{{ bosh_ip }}:4222"}
 
